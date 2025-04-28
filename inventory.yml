@@ -1,0 +1,4 @@
+[network_devices]
+Cisco ansible_host=192.168.100.1 ansible_user=sshuser ansible_connection=network_cli ansible_port=22 ansible_network_os=ios
+CiscoTest ansible_host=192.168.10.0 ansible_user=cisco ansible_connection=network_cli ansible_port=2222 ansible_network_os=ios
+1231231 ansible_host=192.168.10.1/24 ansible_user=423434 ansible_connection=network_cli ansible_port=23432 ansible_network_os=ios

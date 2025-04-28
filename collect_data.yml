@@ -1,0 +1,15 @@
+---
+- name: Collect device information
+  hosts: network_devices
+  gather_facts: no
+  tasks:
+    - name: Gather OS information
+      ios_facts:
+      register: device_facts
+
+    - name: Save device information
+      local_action:
+        module: lineinfile
+        path: device_data.txt
+        create: yes
+        line: "{{ inventory_hostname }} | OS: {{ device_facts.ansible_net_version }} | CPU: {{ device_facts.ansible_net_cpu }} | RAM: {{ device_facts.ansible_net_memory }}"
